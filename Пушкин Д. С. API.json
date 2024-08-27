@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "708729f5-44cc-452b-8f4e-2f80515e1aa6",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34770072"
+	},
+	"item": [
+		{
+			"name": "Создание токена авторизации",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/authenticate",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание организации.",
+			"protocolProfileBehavior": {
+				"protocolVersion": "http2"
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzI0NjA5MzUzLCJpYXQiOjE3MjQ1OTEzNTN9.Q1cqh70l-Z8_vT1qzkVwkYOUmbZMTHHNHhKm-pv3-6RAMWn6xqvojAk9aPz8ADiZdP20nMhuxstGjh_eobsP_A",
+						"description": "Токен аутентификации.",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"ул. Свердлова, дом 12\",\r\n    \"inn\": \"7348129434\",\r\n    \"ogrn\": \"2072072854002\",\r\n    \"kpp\": \"122543052\",\r\n    \"region\": \"95\",\r\n    \"name\": \"Центральная таможня\",\r\n    \"head\": [\r\n    {\r\n        \"inn\": \"515021556592\",\r\n        \"snils\": \"98444534448\",\r\n        \"position\": \"Начальник\",\r\n        \"firstName\": \"Виктор\",\r\n        \"middleName\": \"Викторович\",\r\n        \"lastName\": \"Викторов\",\r\n        \"citizenship\": \"BT\"\r\n    }\r\n    ] \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/api/v1/de/organization",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"de",
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение организации.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzI0NjA5MzUzLCJpYXQiOjE3MjQ1OTEzNTN9.Q1cqh70l-Z8_vT1qzkVwkYOUmbZMTHHNHhKm-pv3-6RAMWn6xqvojAk9aPz8ADiZdP20nMhuxstGjh_eobsP_A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/api/v1/de/organization/4ee3f62c-3946-4e43-8f79-4f2d06161871?id=a862c6b9-3592-42b7-b7b4-d7f4fb995670",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"de",
+						"organization",
+						"4ee3f62c-3946-4e43-8f79-4f2d06161871"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "a862c6b9-3592-42b7-b7b4-d7f4fb995670",
+							"description": "Здесь вводить id организации."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
